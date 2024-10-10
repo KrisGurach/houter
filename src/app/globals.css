@@ -10,3 +10,8 @@
   --color-txt-green-button: #047857;
   --color-bg-light-green-button: #D1FAE5;
 }
+
+.transparent-text  {
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+}
