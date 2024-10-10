@@ -4,7 +4,9 @@
 
 :root {
   --color-text: #1B1C57;
-  --color-button: #F0F3FD;
-  --color-text-green: #047857;
-  --color-button-green: #D1FAE5;
+  --color-txt-transparent-button: #F0F3FD;
+  --color-bg-transparent-button: rgba(255, 255, 255, 0.1);
+  --color-border-transparent-button: rgba(255, 255, 255, 0.3);
+  --color-txt-green-button: #047857;
+  --color-bg-light-green-button: #D1FAE5;
 }
