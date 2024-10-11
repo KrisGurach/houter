@@ -1,20 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { houses, villas, apartments } from "../mockData";
 
 export default function Recommendation() {
   const [currentType, setCurrentType] = useState("house");
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [count, setCount] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(false);
   const scrollRef = useRef();
+
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      const width = scrollRef.current.scrollWidth;
+      setScrollWidth(width);
+    }
+  }, []);
 
   const scrollLeft = () => {
     scrollRef.current.scrollBy({
       left: -500,
       behavior: "smooth",
     });
-    if (scrollPosition >= 0) {
+    if (scrollPosition < 0) {
+      setCount((prevCount) => {
+        const newCount = prevCount - 1;
+
+        if (1296 + 500 * newCount < scrollWidth) {
+          setIsDisabled(false);
+        }
+
+        return newCount;
+      });
       setScrollPosition(scrollPosition + 1);
     }
   };
@@ -25,6 +45,15 @@ export default function Recommendation() {
       behavior: "smooth",
     });
     if (scrollPosition <= 1) {
+      setCount((prevCount) => {
+        const newCount = prevCount + 1;
+
+        if (1296 + 500 * newCount > scrollWidth) {
+          setIsDisabled(true);
+        }
+
+        return newCount;
+      });
       setScrollPosition(scrollPosition - 1);
     }
   };
@@ -56,7 +85,7 @@ export default function Recommendation() {
       <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
         Our recommendation
       </h2>
-      <div className="flex gap-[139px]">
+      <div className="flex gap-[139px] items-center">
         <p className="text-2xl text-[var(--color-text)] font-[family-name:var(--font-lexend-semiBold)]">
           Featured House
         </p>
@@ -103,23 +132,27 @@ export default function Recommendation() {
         <div>
           <button
             onClick={scrollLeft}
-            className={leftButtonClass}
+            className={`mr-4 w-[60px] h-[52px] rounded-[32px]  ${
+              scrollPosition === 0
+                ? "bg-[var(--color-light-grey)] leftDisabledButton"
+                : "bg-[var(--color-dark-green-button)] leftButton"
+            }`}
             disabled={scrollPosition === 0}
-          >
-            Left
-          </button>
+          ></button>
           <button
             onClick={scrollRight}
-            className={rightButtonClass}
-            disabled={scrollPosition === 1}
-          >
-            Right
-          </button>
+            className={`w-[60px] h-[52px] rounded-[32px] ${
+              isDisabled
+                ? "bg-[var(--color-light-grey)] rightDisabledButton"
+                : "bg-[var(--color-dark-green-button)] rightButton"
+            }`}
+            disabled={isDisabled}
+          ></button>
         </div>
       </div>
 
       <div className="mt-[40px] flex items-center">
-        <div className="w-[90%] overflow-x-auto scrollable-element" ref={scrollRef}>
+        <div className="overflow-x-auto scrollable-element" ref={scrollRef}>
           <div className="flex">
             {currentArray.map((x, index) => (
               <HouseCard
@@ -144,14 +177,22 @@ function HouseCard({ image, name, price, photo, owner, location }) {
     <div className="flex flex-col gap-6 mr-10 w-[340px]">
       <div className="w-[340px]">
         <Image src={image} className="w-[340px] h-[382px]" alt="изображение" />
-        <p className="mt-[24px] text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)]  text-xl">{name}</p>
-        <p className="mt-[8px] text-[var(--color-text-3)] font-[family-name:var(--font-lexend-medium)] text-[20px]">{price}</p>
+        <p className="mt-[24px] text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)]  text-xl">
+          {name}
+        </p>
+        <p className="mt-[8px] text-[var(--color-text-3)] font-[family-name:var(--font-lexend-medium)] text-[20px]">
+          {price}
+        </p>
       </div>
       <div className="flex items-center gap-4">
         <Image src={photo} className="" alt="изображение" />
         <div>
-          <p className="text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)] text-[18px]">{owner}</p>
-          <p className="text-[var(--color-grey)] font-[family-name:var(--font-lexend-medium)] text-[14px]">{location}</p>
+          <p className="text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)] text-[18px]">
+            {owner}
+          </p>
+          <p className="text-[var(--color-grey)] font-[family-name:var(--font-lexend-medium)] text-[14px]">
+            {location}
+          </p>
         </div>
       </div>
     </div>

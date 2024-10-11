@@ -2,6 +2,8 @@ import roselands from "./images/houses/roselands.png";
 import dianne from "./images/houses/dianne.png";
 import woodland from "./images/houses/woodlandside.png";
 import rob from "./images/houses/rob.png";
+import lighthouse from "./images/houses/lighthouse.png";
+import ron from "./images/houses/ron.png";
 
 export const houses = [
     {
@@ -30,16 +32,7 @@ export const houses = [
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
     },
-
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-
+    
     {
         image: roselands,
         name: "Roselands House",
@@ -49,60 +42,6 @@ export const houses = [
         location: "Manchester, Kentucky",
     },
 
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
-    {
-        image: roselands,
-        name: "Roselands House",
-        price: "$ 35.000.000",
-        photo: dianne,
-        owner: "Dianne Russell",
-        location: "Manchester, Kentucky",
-    },
-    
     {
         image: roselands,
         name: "Roselands House",
@@ -198,10 +137,55 @@ export const villas = [
 
 export const apartments = [
     {
-        image: woodland,
+        image: lighthouse,
         name: "The Old Lighthouse",
         price: "$ 44.000.000",
-        photo: rob,
+        photo: ron,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+
+    {
+        image: lighthouse,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: ron,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+
+    {
+        image: lighthouse,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: ron,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+
+    {
+        image: lighthouse,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: ron,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+
+    {
+        image: lighthouse,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: ron,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+
+    {
+        image: lighthouse,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
     },

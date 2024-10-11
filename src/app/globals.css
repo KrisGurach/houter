@@ -49,3 +49,31 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+.leftButton  {
+  background-image: url('./images/left-act-but.svg');
+  background-size: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leftDisabledButton  {
+  background-image: url('./images/left-but.svg');
+  background-size: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rightButton  {
+  background-image: url('./images/right-act-but.svg');
+  background-size: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rightDisabledButton  {
+  background-image: url('./images/right-but.svg');
+  background-size: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
