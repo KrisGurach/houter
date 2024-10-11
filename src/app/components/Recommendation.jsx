@@ -71,21 +71,15 @@ export default function Recommendation() {
 
   const currentArray = getCurrentArray();
 
-  const leftButtonClass =
-    scrollPosition === 0
-      ? "text-[var(--color-light-grey)]"
-      : "text-[var(--color-dark-green-button)]";
-  const rightButtonClass =
-    scrollPosition === 1
-      ? "text-[var(--color-light-grey)]"
-      : "text-[var(--color-dark-green-button)]";
-
   return (
     <div className="ml-[120px] my-[120px]">
-      <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
-        Our recommendation
-      </h2>
-      <div className="flex gap-[139px] items-center">
+      <div className="flex items-center gap-2">
+        <div class="h-[1px] w-[32px] bg-[var(--color-yellow)]"></div>
+        <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
+          Our recommendation
+        </h2>
+      </div>
+      <div className="ml-10 flex gap-[139px] items-center">
         <p className="text-2xl text-[var(--color-text)] font-[family-name:var(--font-lexend-semiBold)]">
           Featured House
         </p>
@@ -94,10 +88,10 @@ export default function Recommendation() {
             <li>
               <button
                 onClick={() => setCurrentType("house")}
-                className={`py-2 px-4 text-sm font-[family-name:var(--font-lexend-semiBold)] rounded-[32px] ${
+                className={`py-3 pl-[50px] pr-6 text-sm font-[family-name:var(--font-lexend-medium)] rounded-[32px] ${
                   currentType === "house"
-                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)]"
-                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)]"
+                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)] image act-house"
+                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)] image house"
                 }`}
               >
                 House
@@ -106,10 +100,10 @@ export default function Recommendation() {
             <li>
               <button
                 onClick={() => setCurrentType("villa")}
-                className={`py-2 px-4 text-sm font-[family-name:var(--font-lexend-semiBold)] rounded-[32px] ${
+                className={`py-3 pl-[50px] pr-6 text-sm font-[family-name:var(--font-lexend-medium)] rounded-[32px] ${
                   currentType === "villa"
-                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)]"
-                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)]"
+                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)] image act-villa"
+                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)] image villa"
                 }`}
               >
                 Villa
@@ -118,10 +112,10 @@ export default function Recommendation() {
             <li>
               <button
                 onClick={() => setCurrentType("apartment")}
-                className={`py-2 px-4 text-sm font-[family-name:var(--font-lexend-semiBold)] rounded-[32px] ${
+                className={`py-3 pl-[50px] pr-6 text-sm font-[family-name:var(--font-lexend-medium)] rounded-[32px] ${
                   currentType === "apartment"
-                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)]"
-                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)]"
+                    ? "text-[var(--color-dark-green-button)] bg-[var(--color-bg-light-green-button)] border border-[var(--color-border-transparent-button)] image act-apart"
+                    : "text-[var(--color-medium-grey)] border border-[var(--color-light-grey)] image apart"
                 }`}
               >
                 Apartment
@@ -134,8 +128,8 @@ export default function Recommendation() {
             onClick={scrollLeft}
             className={`mr-4 w-[60px] h-[52px] rounded-[32px]  ${
               scrollPosition === 0
-                ? "bg-[var(--color-light-grey)] leftDisabledButton"
-                : "bg-[var(--color-dark-green-button)] leftButton"
+                ? "bg-[var(--color-light-grey)] leftDisabled button"
+                : "bg-[var(--color-dark-green-button)] left button"
             }`}
             disabled={scrollPosition === 0}
           ></button>
@@ -143,15 +137,15 @@ export default function Recommendation() {
             onClick={scrollRight}
             className={`w-[60px] h-[52px] rounded-[32px] ${
               isDisabled
-                ? "bg-[var(--color-light-grey)] rightDisabledButton"
-                : "bg-[var(--color-dark-green-button)] rightButton"
+                ? "bg-[var(--color-light-grey)] rightDisabled button"
+                : "bg-[var(--color-dark-green-button)] right button"
             }`}
             disabled={isDisabled}
           ></button>
         </div>
       </div>
 
-      <div className="mt-[40px] flex items-center">
+      <div className="mt-[40px] ml-10 flex items-center">
         <div className="overflow-x-auto scrollable-element" ref={scrollRef}>
           <div className="flex">
             {currentArray.map((x, index) => (
@@ -163,6 +157,8 @@ export default function Recommendation() {
                 photo={x.photo}
                 owner={x.owner}
                 location={x.location}
+                svg={x.svg}
+                status={x.status}
               />
             ))}
           </div>
@@ -172,11 +168,51 @@ export default function Recommendation() {
   );
 }
 
-function HouseCard({ image, name, price, photo, owner, location }) {
+function HouseCard({
+  image,
+  name,
+  price,
+  photo,
+  owner,
+  location,
+  svg,
+  status,
+}) {
   return (
     <div className="flex flex-col gap-6 mr-10 w-[340px]">
       <div className="w-[340px]">
-        <Image src={image} className="w-[340px] h-[382px]" alt="изображение" />
+        <div className="relative">
+          <Image
+            src={image}
+            className="w-[340px] h-[382px]"
+            alt="изображение"
+          />
+          <div
+            className={`absolute left-[16px] bottom-[16px] min-w-[111px] min-h-[34px] px-[16px] flex items-center rounded-[32px] ${
+              status === "Popular"
+                ? "bg-[var(--color-red)]"
+                : status === "New House"
+                ? "bg-[var(--color-blue)]"
+                : status === "Best Deals"
+                ? "bg-[var(--color-green)]"
+                : ""
+            }`}
+          >
+            <Image src={svg} alt="" />
+            <p className={`ml-[10px] font-[family-name:var(--font-lexend-medium)] text-[14px] ${
+              status === "Popular"
+                ? "text-[var(--color-text-red)]"
+                : status === "New House"
+                ? "text-[var(--color-text-blue)]"
+                : status === "Best Deals"
+                ? "text-[var(--color-text-green)]"
+                : ""
+            }`}>
+              {status}
+            </p>
+          </div>
+        </div>
+
         <p className="mt-[24px] text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)]  text-xl">
           {name}
         </p>

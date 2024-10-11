@@ -1,5 +1,8 @@
 import roselands from "./images/houses/roselands.png";
 import dianne from "./images/houses/dianne.png";
+import fire from "./images/houses/fire.svg";
+import home from "./images/houses/home.svg";
+import money from "./images/houses/money.svg";
 import woodland from "./images/houses/woodlandside.png";
 import rob from "./images/houses/rob.png";
 import lighthouse from "./images/houses/lighthouse.png";
@@ -13,6 +16,8 @@ export const houses = [
         photo: dianne,
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -22,6 +27,8 @@ export const houses = [
         photo: dianne,
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
+        svg: home,
+        status: "New House",
     },
 
     {
@@ -31,6 +38,8 @@ export const houses = [
         photo: dianne,
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
+        svg: money,
+        status: "Best Deals",
     },
     
     {
@@ -40,6 +49,8 @@ export const houses = [
         photo: dianne,
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -49,6 +60,8 @@ export const houses = [
         photo: dianne,
         owner: "Dianne Russell",
         location: "Manchester, Kentucky",
+        svg: home,
+        status: "New House",
     },
 ];
 
@@ -60,6 +73,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
+        svg: home,
+        status: "New House",
     },
 
     {
@@ -69,6 +84,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
+        svg: money,
+        status: "Best Deals",
     },
 
     {
@@ -78,6 +95,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -87,6 +106,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
+        svg: home,
+        status: "New House",
     },
 
     {
@@ -96,6 +117,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -105,33 +128,8 @@ export const villas = [
         photo: rob,
         owner: "Robert Fox",
         location: "Dr. San Jose, South Dakota",
-    },
-
-    {
-        image: woodland,
-        name: "Woodlandside",
-        price: "$ 20.000.000",
-        photo: rob,
-        owner: "Robert Fox",
-        location: "Dr. San Jose, South Dakota",
-    },
-
-    {
-        image: woodland,
-        name: "Woodlandside",
-        price: "$ 20.000.000",
-        photo: rob,
-        owner: "Robert Fox",
-        location: "Dr. San Jose, South Dakota",
-    },
-
-    {
-        image: woodland,
-        name: "Woodlandside",
-        price: "$ 20.000.000",
-        photo: rob,
-        owner: "Robert Fox",
-        location: "Dr. San Jose, South Dakota",
+        svg: money,
+        status: "Best Deals",
     },
 ];
 
@@ -143,6 +141,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: money,
+        status: "Best Deals",
     },
 
     {
@@ -152,6 +152,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -161,6 +163,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: money,
+        status: "Best Deals",
     },
 
     {
@@ -170,6 +174,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: home,
+        status: "New House",
     },
 
     {
@@ -179,6 +185,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: fire,
+        status: "Popular",
     },
 
     {
@@ -188,6 +196,8 @@ export const apartments = [
         photo: ron,
         owner: "Ronald Richards",
         location: "Santa Ana, Illinois",
+        svg: money,
+        status: "Best Deals",
     },
 ]    
 
