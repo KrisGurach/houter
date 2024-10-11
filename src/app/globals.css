@@ -7,6 +7,8 @@
 
 :root {
   --color-text: #1B1C57;
+  --color-text-2: #0E1735;
+  --color-text-3: #3C4563;
   --color-txt-transparent-button: #F0F3FD;
   --color-bg-transparent-button: rgba(255, 255, 255, 0.1);
   --color-border-transparent-button: rgba(255, 255, 255, 0.3);
@@ -21,7 +23,7 @@
   --color-yellow: #F59E0B;
 }
 
-.transparent-text  {
+.transparent-text {
   -webkit-text-stroke: 1px #1B1C57;
   color: transparent;
 }
@@ -32,4 +34,18 @@
 
 .box-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.scrollable-element {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.scrollable-element::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-element {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }

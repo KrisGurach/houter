@@ -14,7 +14,7 @@ export default function Recommendation() {
       left: -500,
       behavior: "smooth",
     });
-    if (scrollPosition > 0) {
+    if (scrollPosition >= 0) {
       setScrollPosition(scrollPosition + 1);
     }
   };
@@ -24,7 +24,7 @@ export default function Recommendation() {
       left: 500,
       behavior: "smooth",
     });
-    if (scrollPosition < 1) {
+    if (scrollPosition <= 1) {
       setScrollPosition(scrollPosition - 1);
     }
   };
@@ -52,7 +52,7 @@ export default function Recommendation() {
       : "text-[var(--color-dark-green-button)]";
 
   return (
-    <>
+    <div className="ml-[120px] my-[120px]">
       <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
         Our recommendation
       </h2>
@@ -104,22 +104,22 @@ export default function Recommendation() {
           <button
             onClick={scrollLeft}
             className={leftButtonClass}
-            disabled={scrollPosition === 0} // Деактивируем, если в правом краю
+            disabled={scrollPosition === 0}
           >
             Left
           </button>
           <button
             onClick={scrollRight}
             className={rightButtonClass}
-            disabled={scrollPosition === 1} // Деактивируем, если в левом краю
+            disabled={scrollPosition === 1}
           >
             Right
           </button>
         </div>
       </div>
 
-      <div className="mt-[120px] flex items-center">
-        <div className="w-[90%] overflow-x-auto" ref={scrollRef}>
+      <div className="mt-[40px] flex items-center">
+        <div className="w-[90%] overflow-x-auto scrollable-element" ref={scrollRef}>
           <div className="flex">
             {currentArray.map((x, index) => (
               <HouseCard
@@ -135,23 +135,25 @@ export default function Recommendation() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 function HouseCard({ image, name, price, photo, owner, location }) {
   return (
-    <>
-      <div>
-        <Image src={image} className="" alt="изображение" />
-        <p>{name}</p>
-        <p>{price}</p>
+    <div className="flex flex-col gap-6 mr-10 w-[340px]">
+      <div className="w-[340px]">
+        <Image src={image} className="w-[340px] h-[382px]" alt="изображение" />
+        <p className="mt-[24px] text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)]  text-xl">{name}</p>
+        <p className="mt-[8px] text-[var(--color-text-3)] font-[family-name:var(--font-lexend-medium)] text-[20px]">{price}</p>
       </div>
-      <div>
+      <div className="flex items-center gap-4">
         <Image src={photo} className="" alt="изображение" />
-        <p>{owner}</p>
-        <p>{location}</p>
+        <div>
+          <p className="text-[var(--color-text-2)] font-[family-name:var(--font-lexend-medium)] text-[18px]">{owner}</p>
+          <p className="text-[var(--color-grey)] font-[family-name:var(--font-lexend-medium)] text-[14px]">{location}</p>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
