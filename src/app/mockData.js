@@ -1,7 +1,9 @@
 import roselands from "./images/houses/roselands.png";
 import dianne from "./images/houses/dianne.png";
+import woodland from "./images/houses/woodlandside.png";
+import rob from "./images/houses/rob.png";
 
-const houses = [
+export const houses = [
     {
         image: roselands,
         name: "Roselands House",
@@ -111,4 +113,97 @@ const houses = [
     },
 ];
 
-export default houses;
+export const villas = [
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+
+    {
+        image: woodland,
+        name: "Woodlandside",
+        price: "$ 20.000.000",
+        photo: rob,
+        owner: "Robert Fox",
+        location: "Dr. San Jose, South Dakota",
+    },
+];
+
+export const apartments = [
+    {
+        image: woodland,
+        name: "The Old Lighthouse",
+        price: "$ 44.000.000",
+        photo: rob,
+        owner: "Ronald Richards",
+        location: "Santa Ana, Illinois",
+    },
+]    
+
