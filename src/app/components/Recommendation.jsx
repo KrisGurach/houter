@@ -72,7 +72,7 @@ export default function Recommendation() {
   const currentArray = getCurrentArray();
 
   return (
-    <div className="ml-[120px] my-[120px]">
+    <div className="ml-[120px] mt-[120px]">
       <div className="flex items-center gap-2">
         <div className="h-[1px] w-[32px] bg-[var(--color-yellow)]"></div>
         <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import photo from "../images/houses/dianne.png"
-// import TourSlider from "./TourSlider";
+import TourSlider from "./TourSlider";
 
 export default function Tour() {
   return (
-    <>
-      <div className="ml-[120px] my-[120px]">
+    <div className=" mt-[120px] flex items-center gap-[148px]">
+      <div className="ml-[120px]">
         <div className="flex items-center gap-2">
           <div className="h-[1px] w-[32px] bg-[var(--color-yellow)]"></div>
           <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
@@ -53,8 +53,8 @@ export default function Tour() {
                 Contact Now
             </button>
         </div>
-        {/* <TourSlider /> */}
       </div>
-    </>
+      <TourSlider />
+    </div>
   );
 }
