@@ -108,3 +108,30 @@
 .rightDisabled {
   background-image: url('./images/right-but.svg');
 }
+
+.picture {
+  background-size: 32px;
+  background-repeat: no-repeat;
+}
+
+.bedroom {
+  background-image: url(./images/tour/bedroom.svg);
+}
+
+.bathroom {
+  background-image: url(./images/tour/bathroom.svg);
+}
+
+.floor {
+  background-image: url(./images/tour/floor.svg);
+}
+
+.carpot {
+  background-image: url(./images/tour/carpot.svg);
+}
+
+.call {
+  background-image: url(./images/call.svg);
+  background-position: 16px center, right 16px;
+  background-repeat: no-repeat;
+}

@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
 import Partners from "./components/Partners";
 import Recommendation from "./components/Recommendation";
+import Tour from "./components/Tour";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
         </div>
       </div>
       <Recommendation />
+      <Tour />
     </>
   );
 }

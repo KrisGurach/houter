@@ -74,7 +74,7 @@ export default function Recommendation() {
   return (
     <div className="ml-[120px] my-[120px]">
       <div className="flex items-center gap-2">
-        <div class="h-[1px] w-[32px] bg-[var(--color-yellow)]"></div>
+        <div className="h-[1px] w-[32px] bg-[var(--color-yellow)]"></div>
         <h2 className="text-xs text-[var(--color-yellow)] font-[family-name:var(--font-lexend-medium)]">
           Our recommendation
         </h2>
