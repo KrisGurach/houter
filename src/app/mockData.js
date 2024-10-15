@@ -8,6 +8,10 @@ import rob from "./images/houses/rob.png";
 import lighthouse from "./images/houses/lighthouse.png";
 import ron from "./images/houses/ron.png";
 
+import image1 from "./images/image1.jpg";
+import image2 from "./images/image2.jpg";
+import image3 from "./images/image3.jpg";
+
 export const houses = [
     {
         image: roselands,
@@ -201,3 +205,17 @@ export const apartments = [
     },
 ]    
 
+export const reviews = [
+    {
+      image: image1,
+      text: "Отличное место, чтобы провести отпуск! 🌊",
+    },
+    {
+      image: image2,
+      text: "Прекрасный сервис и уютная атмосфера! ❤️",
+    },
+    {
+      image: image3,
+      text: "Замечательные виды и комфортные номера! 🌅",
+    },
+  ];

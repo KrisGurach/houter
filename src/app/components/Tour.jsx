@@ -1,6 +1,6 @@
 import Image from "next/image";
 import photo from "../images/houses/dianne.png"
-import TourSlider from "./TourSlider";
+// import TourSlider from "./TourSlider";
 
 export default function Tour() {
   return (
@@ -54,7 +54,7 @@ export default function Tour() {
             </button>
         </div>
       </div>
-      <TourSlider />
+      {/* <TourSlider /> */}
     </div>
   );
 }

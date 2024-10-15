@@ -1,0 +1,13 @@
+.slider-container {
+    overflow: hidden;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-slide {
+    margin: 0 28px;
+    width: 740px;
+    height: 400px;
+}
